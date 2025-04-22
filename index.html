@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Reproductor DASH</title>
+	<script src="https://cdn.dashjs.org/latest/dash.all.min.js"></script>
+</head>
+<body>
+	<video class="dashjs-player" autoplay controls preload="auto"></video>
+	<script>
+		var player;
+		document.addEventListener("DOMContentLoaded", function () {
+			init();
+		});
+
+		function init(){
+			player = dashjs.MediaPlayer().create();
+			player.initialize(document.querySelector(".dashjs-player"), "https://dash.akamaized.net/envivio/EnvivioDash3/manifest.mpd", true);
+		};
+	</script>
+</body>
+</html>
